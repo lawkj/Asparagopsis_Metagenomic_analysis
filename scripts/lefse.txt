@@ -1,0 +1,22 @@
+conda activate lefse
+
+lefse_format_input.py test.txt test_small.in -c 1 -s 2 -u 3 -o 1000000
+lefse_run.py test_small.in test.res
+lefse_plot_res.py test.res test.png 
+lefse_plot_features.py p1.in p1.res biomarkers_raw_images/
+
+
+lefse_format_input.py p1.txt p1.in -c 1 -s -1 -u 2 -o 1000000
+lefse_run.py p1.in p1.res
+lefse_plot_res.py p1.res p1.png --dpi 300
+lefse_plot_features.py p1.in p1.res biomarkers/ --dpi 300
+
+lefse_format_input.py p2.txt p2.in -c 1 -s -1 -u 2 -o 1000000
+lefse_run.py p2.in p2.res
+lefse_plot_res.py p2.res p2.png --dpi 300
+lefse_plot_features.py p2.in p2.res biomarkers/ --dpi 300
+
+lefse_format_input.py p3.txt p3.in -c 1 -s -1 -u 2 -o 1000000
+lefse_run.py p3.in p3.res
+lefse_plot_res.py p3.res p3.png --dpi 300
+lefse_plot_features.py p3.in p3.res biomarkers/ --dpi 300
